@@ -2,12 +2,16 @@
 
 use Illuminate\Support\Facades\Route;
 
+// passing data dari route '/' menuju ke view welcome
+/*
 Route::get('/', function () {
-    $name = "Inixindo";
+    $name = request('name');
     return view('welcome', ['name' => $name]);
 });
+*/
 
-// Route::view('/', 'welcome');
+// passing data dari route '/' dijembatani controller menuju ke view welcome
+Route::get('/', 'WelcomeController@index');
 
 Route::view('/home', 'home');
 
