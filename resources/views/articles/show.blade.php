@@ -10,13 +10,21 @@
 <body>
     @extends('layout/master')
 
-    @section('title', $article->title)
-
     @section('content')
-        <h3>{{ $article->title }}</h3>
-        <p>{{ $article->slug }}</p>
-        <p>{{ $article->body }}</p>
-        <p>{{ $article->created_at }}</p>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card mb-3">
+                        <div class="card-header">
+                            {{ $article->title }}
+                        </div>
+                        <div class="card-body">
+                            {{ $article->body }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     @endsection
 </body>
 

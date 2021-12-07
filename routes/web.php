@@ -17,6 +17,7 @@ Route::get('/show', 'WelcomeController@show');
 Route::get('/create', 'WelcomeController@create');
 
 // khusus untuk ArticleController
+Route::get('/articles', 'ArticleController@index');
 Route::get('/articles/{article:slug}', 'ArticleController@show');   // Route Wildcard
 
 Route::view('/home', 'home');
