@@ -21,6 +21,9 @@
                         <div class="card-body">
                             {{ $article->body }}
                         </div>
+                        <div class="card-footer">
+                            {{ $article->created_at->format('d M, Y') }}
+                        </div>
                     </div>
                 </div>
             </div>
