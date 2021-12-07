@@ -11,7 +11,10 @@ Route::get('/', function () {
 */
 
 // passing data dari route '/' dijembatani controller menuju ke view welcome
-Route::get('/', 'WelcomeController@index');
+// Route::get('/', 'WelcomeController@index');
+Route::get('/', 'WelcomeController');   // invokable
+Route::get('/show', 'WelcomeController@show');
+Route::get('/create', 'WelcomeController@create');
 
 Route::view('/home', 'home');
 

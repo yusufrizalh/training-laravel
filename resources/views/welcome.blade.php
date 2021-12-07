@@ -15,7 +15,7 @@
     @section('content')
         <h3>Welcome Page</h3>
         <p>This is welcome page from views > welcome.blade.php</p>
-        {{ $name }}
+        {{ $email }}
     @endsection
 </body>
 
