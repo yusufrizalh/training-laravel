@@ -8,6 +8,8 @@ class ArticleController extends Controller
 {
     public function show($slug)
     {
-        return view('articles/show', compact('slug'));
+        $article = \DB::table('articles')->where('slug', $slug)->first();
+        // dd($article);   // dummy or die 
+        return view('articles/show', compact('article'));
     }
 }

@@ -10,11 +10,13 @@
 <body>
     @extends('layout/master')
 
-    @section('title', $slug)
+    @section('title', $article->title)
 
     @section('content')
-        <h3>Article Page</h3>
-        <p>{{ $slug }}</p>
+        <h3>{{ $article->title }}</h3>
+        <p>{{ $article->slug }}</p>
+        <p>{{ $article->body }}</p>
+        <p>{{ $article->created_at }}</p>
     @endsection
 </body>
 
