@@ -2,14 +2,13 @@
 
 namespace App\Http\Controllers;
 
+use App\Article;    // Model
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
-    public function show($slug)
+    public function show(Article $article)  // model binding
     {
-        $article = \DB::table('articles')->where('slug', $slug)->first();
-        // dd($article);   // dummy or die 
         return view('articles/show', compact('article'));
     }
 }
