@@ -16,6 +16,9 @@ Route::get('/', 'WelcomeController');   // invokable
 Route::get('/show', 'WelcomeController@show');
 Route::get('/create', 'WelcomeController@create');
 
+// khusus untuk ArticleController
+Route::get('/articles/{slug}', 'ArticleController@show');   // Route Wildcard
+
 Route::view('/home', 'home');
 
 Route::view('/product', 'product');
