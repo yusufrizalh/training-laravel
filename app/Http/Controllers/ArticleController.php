@@ -21,19 +21,16 @@ class ArticleController extends Controller
         return view('articles/create');
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        // validasi form
-        $this->validate($request, [
+        // proses menyimpan data kedalam database
+        $attributes = request()->validate([
             'title' => 'required|min:8|max:30',
             'body' => 'required',
         ]);
-
-        // proses menyimpan data kedalam database
-        $article = $request->all();
-        $article['slug'] = \Str::slug($request->title);
-        Article::create($article);
-
+        $attributes['slug'] = \Str::slug(request('title'));
+        Article::create($attributes);
+        session()->flash('success', 'New article has been saved!');
         return back();
     }
 
