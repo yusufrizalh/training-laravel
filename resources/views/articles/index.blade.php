@@ -39,7 +39,7 @@
                     </div>
                 @empty
                     <div class="col-md-6">
-                        <div class="alert alert-info">
+                        <div class="alert alert-danger">
                             There's no articles here!
                         </div>
                     </div>
