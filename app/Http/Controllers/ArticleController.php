@@ -23,25 +23,13 @@ class ArticleController extends Controller
 
     public function store(Request $request)
     {
+        // validasi form
+        $this->validate($request, [
+            'title' => 'required|min:8|max:30',
+            'body' => 'required',
+        ]);
+
         // proses menyimpan data kedalam database
-        // $article = new Article;
-        // $article->title = $request->title;
-        // $article->slug = \Str::slug($request->title);
-        // $article->body = $request->body;
-        // $article->save();
-        // return redirect()->to('/articles');
-
-        // mass assignment membutuhkan fillable
-        // Article::create([
-        //     'title' => $request->title,
-        //     'slug' => \Str::slug($request->title),
-        //     'body' => $request->body,
-        // ]);
-
-        // dd($request->all());
-
-        // Article::create($request->all());
-
         $article = $request->all();
         $article['slug'] = \Str::slug($request->title);
         Article::create($article);
