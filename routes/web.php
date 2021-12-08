@@ -18,8 +18,12 @@ Route::get('/create', 'WelcomeController@create');
 
 // khusus untuk ArticleController
 Route::get('/articles', 'ArticleController@index');
-Route::get('/articles/create', 'ArticleController@create'); // membuka form
+Route::get('/articles/create', 'ArticleController@create'); // membuka form create
 Route::post('/articles/store', 'ArticleController@store');   // menyimpan data
+Route::get('/articles/{article:slug}/edit', 'ArticleController@edit');  // membuka form edit
+Route::patch('/articles/{article:slug}/edit', 'ArticleController@update');  // proses mengubah data
+Route::delete('/articles/{article:slug}/delete', 'ArticleController@destroy');    // menghapus data
+Route::get('/categories/{category:slug}', 'CategoryController@show');   // filtering category
 Route::get('/articles/{article:slug}', 'ArticleController@show');   // Route Wildcard
 
 Route::view('/home', 'home');

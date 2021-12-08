@@ -20,7 +20,7 @@
                         </div>
                     @endif
                     <div class="card">
-                        <div class="card-header">Create New Article</div>
+                        <div class="card-header bg-primary text-white">Create New Article</div>
                         <div class="card-body">
                             <form action="/articles/store" method="POST">
                                 @csrf

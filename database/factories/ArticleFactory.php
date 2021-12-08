@@ -13,8 +13,9 @@ use Faker\Generator as Faker;
 
 $factory->define(Article::class, function (Faker $faker) {
     return [
+        'category_id' => rand(1, 4),
         'title' => $faker->sentence(),  // This is my article
         'slug' => \Str::slug($faker->sentence()),   // this-is-my-article
-        'body' => $faker->paragraph(100),
+        'body' => $faker->paragraph(20),
     ];
 });

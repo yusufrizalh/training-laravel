@@ -14,7 +14,11 @@
         <div class="container">
             <div class="d-flex justify-content-between">
                 <div>
-                    <h3>All Articles</h3>
+                    @if (isset($category))
+                        <h3>Category: {{ $category->name }}</h3>
+                    @else
+                        <h3>All Articles</h3>
+                    @endif
                     <hr>
                 </div>
                 <div>
@@ -32,8 +36,9 @@
                                 <div>{{ Str::limit($article->body, 100, '.....') }}</div>
                                 <a href="/articles/{{ $article->slug }}">Read more</a>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer d-flex justify-content-between">
                                 Created on {{ $article->created_at->format('d M, Y') }}
+                                <a href="/articles/{{ $article->slug }}/edit" class="btn btn-sm btn-success">Edit</a>
                             </div>
                         </div>
                     </div>
