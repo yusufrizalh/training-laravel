@@ -18,6 +18,8 @@ Route::get('/create', 'WelcomeController@create');
 
 // khusus untuk ArticleController
 Route::get('/articles', 'ArticleController@index');
+Route::get('/articles/create', 'ArticleController@create'); // membuka form
+Route::post('/articles/store', 'ArticleController@store');   // menyimpan data
 Route::get('/articles/{article:slug}', 'ArticleController@show');   // Route Wildcard
 
 Route::view('/home', 'home');

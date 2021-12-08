@@ -17,12 +17,20 @@ class ArticleController extends Controller
 
     public function create()
     {
-        //
+        // untuk membuka form create new article
+        return view('articles/create');
     }
 
     public function store(Request $request)
     {
-        //
+        // proses menyimpan data kedalam database
+        $article = new Article;
+        $article->title = $request->title;
+        $article->slug = \Str::slug($request->title);
+        $article->body = $request->body;
+        $article->save();
+
+        return redirect()->to('/articles');
     }
 
     public function show(Article $article)
